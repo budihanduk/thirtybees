@@ -181,6 +181,17 @@ class AdminSearchConfControllerCore extends AdminController
                             $this->l('It checks if the searched term is the exact end of the indexed word.'),
                         ],
                     ],
+		    'PS_SEARCH_INSTOCK'        => [
+                        'title'      => $this->l('Search in stock'),
+                        'validation' => 'isBool',
+                        'cast'       => 'intval',
+                        'type'       => 'bool',
+                        'desc'       => $this->l('By default, even products that are currently out of stock can part of the search results.').'<br/>'.
+                            $this->l('With this option enabled, only products that are available for order will be returned.'),
+                        'hint'       => [
+                            $this->l('Enable more precise search with the in_stock/availability option.'),
+                        ],
+                    ],
                     'PS_SEARCH_MINWORDLEN' => [
                         'title'      => $this->l('Minimum word length (in characters)'),
                         'hint'       => $this->l('Only words this size or larger will be indexed.'),
